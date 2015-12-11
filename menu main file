@@ -1,0 +1,41 @@
+#include <stdio.h>
+/*
+Write the code using functions. Write a C program that gives user menu to choose from – 
+1. Convert temperature input from the user in degrees Fahrenheit to degrees Celsius 
+2. Convert temperature input from the user in degrees Celsius to degrees Fahrenheit 
+3. Quit. 
+Formulae- C = (5 / 9) * (F-32) and F = (9/5) * C + 32 
+*/
+int main() {
+    int choice;
+   
+   do {
+   //output menu to screen
+    printf("Choose an option \n");
+    printf("1. F-> C \n");
+    printf("2. C -> F \n");
+    printf("3. Exit \n");
+    scanf("%i", &choice);
+    printf("You entered %i \n", choice);
+    
+  
+   //take action based on choice
+    switch(choice) {
+        case 1:
+           printf("F -> C \n");
+           break;
+        case 2:
+           printf("C -> F \n");
+           break;
+        case 3:
+           printf("Exit \n");
+           break;
+        default:
+           printf("That is not a valid option \n");
+           break;
+    }
+    
+   } while (choice != 3);
+
+    return 0;
+}
