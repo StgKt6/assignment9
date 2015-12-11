@@ -1,0 +1,18 @@
+#include <stdio.h>
+int function1(int input) {
+    int result;
+    
+    result = ((double) 5/9) * (input-32);
+    return result;
+}
+int main() {
+    int fahrenheit, result;
+    double celsius;
+    
+    printf("Enter the temperature in degrees fahrenheit: \n");
+    scanf("%d", &fahrenheit);
+    
+    celsius = function1(fahrenheit);
+    printf ("The converted temperature is %.2lf\n", celsius);
+    return 0;
+}
