@@ -1,70 +1,30 @@
+//
+//  main.c
+//  convertTemp.c
+//
+//  Created by Kieta St.George on 5/26/16.
+//  Copyright © 2016 Kieta St.George. All rights reserved.
+//
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
 
 /*
-Write the code using functions. Write a C program that gives user menu to choose from – 
-1. Convert temperature input from the user in degrees Fahrenheit to degrees Celsius 
-2. Convert temperature input from the user in degrees Celsius to degrees Fahrenheit 
-3. Quit. 
-Formulae- C = (5 / 9) * (F-32) and F = (9/5) * C + 32 
-*/
+ Write the code using functions. Write a C program that gives user menu to choose from –
+ 1. Convert temperature input from the user in degrees Fahrenheit to degrees Celsius
+ 2. Convert temperature input from the user in degrees Celsius to degrees Fahrenheit
+ 3. Quit.
+ Formulae- C = (5 / 9) * (F-32) and F = (9/5) * C + 32
+ */
 
 //create menu
-//declare variables
+
 //input
 //process
 //output
-int main() {
-    int choice;
-    
-    int fah, cel;
-    double newCel, newFah;
-    //function 1 F -> C
-    printf("Enter the temperature in degrees fahrenheit: \n");
-    scanf("%d", &fah);
-    
-    newCel = function1(fah);
-    printf ("The converted temperature is %.2lf\n", newCel);
-    //function 2 C -> F
-    printf("Enter the temperature in degrees celsius: \n");
-    scanf("%d", &cel);
-    
-    newFah = function2(cel);
-    printf ("The converted temperature is %.2lf\n", newFah);
-    return 0;
-   
-   do {
-   //output menu to screen
-    printf("Choose an option \n");
-    printf("1. F-> C \n");
-    printf("2. C -> F \n");
-    printf("3. Exit \n");
-    scanf("%i", &choice);
-    printf("You entered %i \n", choice);
-    
-  
-   //take action based on choice
-    switch(choice) {
-        case 1:
-           printf("F -> C \n");
-           break;
-        case 2:
-           printf("C -> F \n");
-           break;
-        case 3:
-           printf("Exit \n");
-           break;
-        default:
-           printf("That is not a valid option \n");
-           break;
-    }
-    
-   } while (choice != 3);
-
-    return 0;
-    
-    //function1 C= (fahrenheit-32) * 5/9; 
+//function1 C= (fahrenheit-32) * 5/9;
 int function1(int input) {
     int result;
     
@@ -72,11 +32,64 @@ int function1(int input) {
     return result;
 }
 
-//function2  F = (°C * 9) / 5 + 32  
+//function2  F = (°C * 9) / 5 + 32
 int function2(int input) {
     int result;
     
     result = ((input * 9)/5) + 32;
     return result;
 }
+
+
+int main() {
+    //declare variables
+    int choice = 0;
+    
+    int fah = 0, cel = 0;
+    double newCel = 0, newFah = 0;
+    
+    
+    
+    
+    
+    
+    do {
+        //output menu to screen
+        printf("Choose an option \n");
+        printf("1. F-> C \n");
+        printf("2. C -> F \n");
+        printf("3. Exit \n");
+        scanf("%i", &choice);
+        printf("You entered %i \n", choice);
+        
+        
+        //take action based on choice
+        switch(choice) {
+            case 1:
+                printf("Enter the temperature in degrees fahrenheit: \n");
+                scanf("%d", &fah);
+                
+                newCel = function1(fah);
+                printf ("The converted temperature is %.2lf\n", newCel);
+                break;
+                
+            case 2:
+                printf("Enter the temperature in degrees celsius: \n");
+                scanf("%d", &cel);
+                              
+                newFah = function2(cel);
+                printf("The converted temperature is %.2lf\n", newFah);
+                break;
+                
+            case 3:
+                printf("Exit \n");
+                break;
+                
+            default:
+                printf("That is not a valid option \n");
+                break;
+                        }
+        } while (choice != 3);
+    
+    return 0;
 }
